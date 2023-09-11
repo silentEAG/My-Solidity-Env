@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  ethereum:
+    image: ethereum/client-go:v1.10.17
+    ports:
+      - "8545:8545"
+      - "30303:30303"
+    volumes:
+      # volumes
+      - ./data:/root/data
+      - ./entrypoint.sh:/tmp/entrypoint.sh
+      # docker cp
+      - ./keystore:/tmp/keystore
+      - ./genesis.json:/tmp/genesis.json
+    entrypoint: /tmp/entrypoint.sh
