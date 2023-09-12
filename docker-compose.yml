@@ -13,4 +13,4 @@ services:
       # docker cp
       - ./keystore:/tmp/keystore
       - ./genesis.json:/tmp/genesis.json
-    entrypoint: /tmp/entrypoint.sh
+    entrypoint: sh /tmp/entrypoint.sh
